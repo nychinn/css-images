@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pikachu</title>
+
+	<style>
+		:root {
+			--yellow: gold;
+	    	--black: #333;
+	    	--white: #fff;	
+	    	--red: crimson;
+		}
+
+		body {
+			background-color: var(--yellow);
+		}
+
+		.pikachu {
+			max-width: 500px;
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			top: 100px;
+		}
+
+		.eyes {
+			position: relative;
+			width: 100%;
+		}
+
+		.eye {
+			height: 100px;
+			width: 100px;
+			display: inline-block;
+			border-radius: 50%;
+			background-color: var(--black);
+			position: absolute;
+		}
+
+		.eye:nth-child(1) {
+			left: 0;
+		}
+
+		.eye:nth-child(2) {
+			right: 0;
+		}
+
+		.eye span {
+			height: 40px;
+			width: 40px;
+			display: inline-block;
+			border-radius: 50%;
+			background-color: var(--white);
+			position: absolute;
+			top: 15px;
+			left: 15px;
+		}
+
+		.nose {
+			display: inline-block;
+			height: 0;
+			width: 0;
+			border-top: 20px solid var(--black);
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-bottom: 20px solid transparent;
+			position: absolute;
+			left: 50%;
+			top: 75px;
+			margin-left: -20px;
+		}
+
+		.cheeks {
+			position: relative;
+			width: 100%;
+		}
+
+		.cheek {
+			height: 125px;
+			width: 125px;
+			display: inline-block;
+			border-radius: 50%;
+			background-color: var(--red);
+			position: absolute;
+			top: 110px;
+		}
+
+		.cheek:nth-child(1) {
+			left: -50px;
+		}
+
+		.cheek:nth-child(2) {
+			right: -50px;
+		}
+
+		.mouth {
+			position: relative;
+			width: 100%;
+			top: 135px;
+		}
+
+		.smile {
+			display: inline-block;
+			width: 100px;
+			height: 50px;
+			background-color: var(--black);
+			border-radius: 50%;
+			position: absolute;
+			left: 50%;
+			margin-left: -50px;
+		}
+
+		.mask {
+			display: inline-block;
+			width: 200px;
+			height: 50px;
+			background-color: var(--yellow);
+			border-radius: 50%;
+			position: absolute;
+			left: 50%;
+			margin-left: -100px;
+			margin-top: -15px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="pikachu">
+		<div class="eyes">
+			<div class="eye"><span></span></div>
+			<div class="eye"><span></span></div>
+		</div>
+		<div class="nose"></div>
+		<div class="cheeks">
+			<div class="cheek"></div>
+			<div class="cheek"></div>
+		</div>
+		<div class="mouth">
+			<div class="smile"></div>
+			<div class="mask"></div>
+		</div>
+	</div>
+	
+</body>
+</html>
