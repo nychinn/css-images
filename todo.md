@@ -23,4 +23,5 @@
 * Parfait
 * Bowl of Noodles
 * Bowl of Rice
-* Totoro Pencilcase
+* Magical Girl Emblems
+* ~~Totoro Pencilcase~~ [--Link](https://nychinn.github.io/css-images/totoro-pencilcase/)
