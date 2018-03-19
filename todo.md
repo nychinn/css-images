@@ -9,3 +9,5 @@
 * Icecreams
 * Party Parrot
 * Hamburger and Chips
+* Nintendo Switch
+* Fairy Tale characters
