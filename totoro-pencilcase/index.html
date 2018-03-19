@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Totoro Pencilcase</title>
+
+	<style>
+		:root {
+			--lgrey: #D2D2CA;
+	    	--dgrey: #A8A9A4;
+	    	--ddgrey: #989994;
+	    	--white: #FFFFFF;
+	    	--black: #333333;
+	    	--bg: #DAE3E8;
+		}
+
+		body {
+			background-color: var(--bg);
+		}
+		
+		.box {
+			position: relative;
+			margin: auto;
+			margin-top: 8%;
+			width: 500px;
+			height: 200px;
+			display: block;
+		}
+
+		/* 500 / 2 = 0.4 */
+
+		.base,
+		.base-copy,
+		.ear,
+		.ear::after,
+		.eye,
+		.eye::after,
+		.nose,
+		.whiskers,
+		.whiskers::before,
+		.whiskers::after,
+		.belly,
+		.belly-marks-top,
+		.belly-marks-top::before,
+		.belly-marks-top::after,
+		.belly-marks-bot,
+		.belly-marks-bot::before,
+		.belly-marks-bot::after,
+		.zipper,
+		.zipper::after {
+			display: inline-block;
+			position: absolute;
+			box-sizing: border-box;
+		}
+
+		.base {
+			background-color: var(--dgrey);
+			width: 100%;
+			height: 100%;
+			border-radius: 100px;
+		}
+
+		.base-copy {
+			width: 100%;
+			height: 100%;
+			border-radius: 100px;
+			overflow: hidden;
+		}
+
+		.ear {
+			height: 50%;
+			width: 10%;
+			background-color: var(--ddgrey); 
+			top: -30%;
+			border-radius: 50px 50px 0 0;
+			z-index: -1;
+		}
+
+		.ear-left {
+			left: 22%;
+		}
+
+		.ear-right {
+			right: 22%;
+		}
+
+		.eye {
+			background-color: var(--white);
+			height: 35%;
+			width: calc(35% * 0.4);
+			border-radius: 50%;
+			top: 15%;
+		}
+
+		.eye::after {
+			content: '';
+			background-color: #333;
+			border-radius: 50%;
+			height: 50%;
+			width: 50%;
+			top: 25%;
+			left: 25%;
+		}
+
+		.eye-left {
+			left: 20%;
+		}
+
+		.eye-right {
+			right: 20%;
+		}
+
+		.nose {
+			width: 5%;
+			height: 8%;
+			border-radius: 50px;
+			top: 32%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			background-color: var(--black);
+		}
+
+		.whiskers {
+			width:10%;
+			height:10%;  
+			border:solid 5px var(--black);
+			border-color: var(--black) transparent transparent transparent;
+			border-radius: 50%/30% 30% 0 0;
+			top: 35%;
+		}
+
+		.whiskers::before,
+		.whiskers::after {
+			content: '';
+			display: block;
+			width:100%;
+			height:100%;  
+			border:solid 5px var(--black);
+			border-color: var(--black) transparent transparent transparent;
+			border-radius: 50%/30% 30% 0 0;
+			margin-left: 10%;
+		}
+
+		.whiskers::before {
+			top: -170%;
+			-webkit-transform: rotate(15deg);
+			   -moz-transform: rotate(15deg);
+			    -ms-transform: rotate(15deg);
+			     -o-transform: rotate(15deg);
+			        transform: rotate(15deg);
+		}
+
+		.whiskers::after {
+			top: 90%;
+			-webkit-transform: rotate(-15deg);
+			   -moz-transform: rotate(-15deg);
+			    -ms-transform: rotate(-15deg);
+			     -o-transform: rotate(-15deg);
+			        transform: rotate(-15deg);
+		}
+
+		.whiskers-left {
+			left: 2.5%;
+		}
+
+		.whiskers-right {
+			-webkit-transform: scaleX(-1);
+			   -moz-transform: scaleX(-1);
+			    -ms-transform: scaleX(-1);
+			     -o-transform: scaleX(-1);
+			        transform: scaleX(-1);
+		   	filter: FlipH;
+		   	-ms-filter: "FlipH";
+		    right: 2.5%;
+		}
+
+		.belly {
+			height: 90%;
+			width: 120%;
+			left: -10%;
+			background-color: var(--lgrey);
+			bottom: -50%;
+			border-radius: 150px 150px 0 0 ;
+		}
+
+		.belly-marks-top {
+			display: block;
+			width:10%;
+			height:50%;  
+			border: solid 5px var(--dgrey);
+			border-color: var(--dgrey) transparent transparent transparent;
+			border-radius: 50%/30% 30% 0 0;
+			left: 50%;
+			top: 8%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.belly-marks-top::before,
+		.belly-marks-top::after {
+			content: '';
+			position: absolute;
+			width: 115%;
+			height: 100%;
+			display: block;
+			border: solid 5px var(--dgrey);
+			border-color: var(--dgrey) transparent transparent transparent;
+			border-radius: 50%/30% 30% 0 0;
+			top: -5%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			
+		}
+
+		.belly-marks-top::before {
+			left: -155%;
+		}
+
+		.belly-marks-top::after {
+			right: -260%;
+		}
+
+		.belly-marks-bot {
+			display: block;
+			width:10%;
+			height:50%;  
+			border: solid 5px var(--dgrey);
+			border-color: var(--dgrey) transparent transparent transparent;
+			border-radius: 50%/30% 30% 0 0;
+			left: 25%;
+			top: 23%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.belly-marks-bot::before,
+		.belly-marks-bot::after,
+		.belly-marks-bot span {
+			content: '';
+			display: block;
+			width:100%;
+			height:100%;  
+			border: solid 5px var(--dgrey);
+			border-color: var(--dgrey) transparent transparent transparent;
+			border-radius: 50%/30% 30% 0 0;
+			top: -6%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.belly-marks-bot::before {
+			left: 240%;
+		}
+
+		.belly-marks-bot::after {
+			left: 450%;
+		}
+
+		.belly-marks-bot span {
+			position: absolute;
+			left: 640%;
+		}
+
+		.zipper {
+		    border-bottom: 70px solid var(--ddgrey);
+		    border-left: 10px solid transparent;
+		    border-right: 10px solid transparent;
+		    height: 0;
+		    width: 30px;
+		    right: -10%;
+		    border-radius: 0 0 30px 30px;
+	        top: 30%;
+			right: -6%;
+			z-index: -1;
+		    -webkit-transform: rotate(-45deg);
+		       -moz-transform: rotate(-45deg);
+		        -ms-transform: rotate(-45deg);
+		         -o-transform: rotate(-45deg);
+		            transform: rotate(-45deg);
+		}
+
+		.zipper::after {
+		    content: '';
+		    width: 15px;
+		    height: 15px;
+		    border-radius: 50%;
+		    background-color: var(--bg);
+		    top: 45px;
+    		left: -2px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="box">
+		
+		<div class="base">
+			
+			<div class="ear ear-left"></div>
+			<div class="ear ear-right"></div>
+
+			<div class="eye eye-left"></div>
+			<div class="eye eye-right"></div>
+
+			<div class="nose"></div>
+
+			<div class="whiskers whiskers-left"></div>
+			<div class="whiskers whiskers-right"></div>
+			
+			<div class="base-copy">
+				<div class="belly">
+					<div class="belly-marks-top"></div>
+					<div class="belly-marks-bot"><span></span></div>
+				</div>
+			</div>
+			
+			<div class="zipper"></div>
+		</div>
+
+	</div>
+
+</body>
+</html>
