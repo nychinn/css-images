@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Donald and Daisy</title>
+
+	<style>
+		:root {
+			--bg: #CBD081;
+			--face: #FFFACD;
+	    	--black: #333;
+	  		--white: #FFF;
+	    	--pink: #F9C2CD;
+	    	--lpink: #FBD4DC;
+	    	--darkred: #C43543;
+	    	--red: #D83C4C;
+	    	--lilac: #BDAABF;
+		}
+
+		body {
+			background-color: var(--lilac);
+		}
+
+		.box {
+			position: relative;
+			margin: auto;
+			display: block;
+			margin-top: 8%;
+			width: 1000px;
+			height: 500px;
+		}
+
+		.head,
+		.heart,
+		.heart::before,
+		.heart::after,
+		.ear-left,
+		.ear-right,
+		.bow,
+		.bow-left,
+		.bow-left::before,
+		.bow-right,
+		.bow-right::before,
+		.bow-middle,
+		.bowtie,
+		.bowtie-left,
+		.bowtie-left::before,
+		.bowtie-right,
+		.bowtie-right::before,
+		.bowtie-middle,
+		.face,
+		.eye-left,
+		.eye-right,
+		.eyelash,
+		.eyelash::before,
+		.eyelash::after,
+		.cheek-left,
+		.cheek-right,
+		.beak,
+		.pupil,
+		.nose,
+		.break {
+			position: absolute;
+			display: inline-block;
+		}
+
+		.heart {
+			height: 50%;
+			width: 50%;
+			left: -65%;
+			top: 50%;
+		}
+
+		.heart::before,
+		.heart::after {
+			content: '';
+			width: 80%;
+			height: 50%;
+			background: var(--pink);
+			border-radius: 100px 0 0 100px;
+			-webkit-transform: rotate(45deg);
+			   -moz-transform: rotate(45deg);
+			    -ms-transform: rotate(45deg);
+			     -o-transform: rotate(45deg);
+			        transform: rotate(45deg);
+		}
+
+		.heart::before {
+			left: -1.25%;
+			right: auto;
+		}
+
+		.heart::after {
+			-webkit-transform: rotate(-45deg) scaleX(-1);
+			   -moz-transform: rotate(-45deg) scaleX(-1);
+			    -ms-transform: rotate(-45deg) scaleX(-1);
+			     -o-transform: rotate(-45deg) scaleX(-1);
+			        transform: rotate(-45deg) scaleX(-1);
+		   	filter: FlipH;
+		   	-ms-filter: "FlipH";
+		    right: -1.25%;
+		}
+
+		.head {
+			width: 25%;
+			height: 47%;
+			background-color: var(--white); 
+			border-radius: 50% 50% 40% 40%;
+			top: 25%;
+			left: 15%;
+		}
+
+		.head:nth-child(2) {
+		    right: 15%;
+			left: auto;
+		}
+
+		.ear-left,
+		.ear-right {
+			width: 50%;
+			height: 50%;
+			background-color: #333;
+			border-radius: 50%;
+			top: -20%;
+		}
+
+		
+
+		.ear-left {
+			left: -30%;
+		}
+
+		.ear-right {
+			right: -30%;
+		}
+
+		.bow, .bowtie {
+			width: 50%;
+			height: 50%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			z-index: 1;
+		}
+
+		.bowtie {
+			top: 90%;
+			left: 50%;
+			-webkit-transform: scale(0.75) translateX(-66%);
+			   -moz-transform: scale(0.75) translateX(-66%);
+			    -ms-transform: scale(0.75) translateX(-66%);
+			     -o-transform: scale(0.75) translateX(-66%);
+			        transform: scale(0.75) translateX(-66%);
+		}
+
+		.bow {
+			top: 1%;
+		}
+
+		.bow-left,
+		.bow-right,
+		.bowtie-left,
+		.bowtie-right {
+			top: -12%;
+			width: 40%;
+			height: 25%;
+			border-radius: 50px;
+			background-color: var(--lpink);
+			-webkit-transform: rotate(36deg);
+			   -moz-transform: rotate(36deg);
+			    -ms-transform: rotate(36deg);
+			     -o-transform: rotate(36deg);
+			        transform: rotate(36deg);
+		}
+
+		.bowtie-left,
+		.bowtie-right {
+			width: 34%;
+			background-color: var(--red);
+		}
+
+		.bow-left,
+		.bowtie-left {
+			left: 10%;
+		}
+
+		.bow-right,
+		.bowtie-right {
+			-webkit-transform: rotate(-36deg) scaleX(-1);
+			   -moz-transform: rotate(-36deg) scaleX(-1);
+			    -ms-transform: rotate(-36deg) scaleX(-1);
+			     -o-transform: rotate(-36deg) scaleX(-1);
+			        transform: rotate(-36deg) scaleX(-1);
+		   	filter: FlipH;
+		   	-ms-filter: "FlipH";
+		    right: 10%;
+		}
+
+		.bow-left::before,
+		.bow-right::before,
+		.bowtie-left::before,
+		.bowtie-right::before {
+	        content: '';
+		    width: 100%;
+		    height: 100%;
+		    top: 25%;
+		    left: 32%;
+		    border-radius: 50px;
+		    background-color: var(--lpink);
+		    -webkit-transform: rotate(-57deg);
+		    -moz-transform: rotate(-57deg);
+		    -ms-transform: rotate(-57deg);
+		    -o-transform: rotate(-57deg);
+		    transform: rotate(-57deg);
+		}
+
+		.bowtie-left::before,
+		.bowtie-right::before {
+			background-color: var(--red);
+		}
+
+		.bow-middle,
+		.bowtie-middle {
+			width: 20%;
+		    height: 24%;
+		    border-radius: 50px;
+		    left: 50%;
+		    top: -3%;
+		    z-index: 1;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			background-color: var(--pink);
+		}
+
+		.bowtie-middle {
+			background-color: var(--darkred);
+		}
+
+		.face {
+			width: 75%;
+			height: 75%;
+			left: 12.5%;
+			top: 25%;
+		}
+
+		.face-top {
+			width: 50%;
+			height: 50%;
+			background-color: #fff;
+			display: inline-block;
+			border-radius: 50% 50% 0 0;
+			left: 4%;
+			background-color: var(--face);
+		}
+
+		.face-top::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+			display: inline-block;
+			border-radius: 50% 50% 0 0;
+			right: -80%;
+			background-color: var(--face);
+		}
+
+		.eye-left,
+		.eye-right {
+			width: 20%;
+			height: 22.5%;
+			border-radius: 70px;
+			box-sizing: border-box;
+			background-color: var(--black);
+			top: 35%;
+		}
+
+		.eye-left {
+			left: 15%;
+		}
+
+		.eye-right {
+			right: 15%;
+		}
+
+		.eyelash,
+		.eyelash::before,
+		.eyelash::after {
+			background-color: var(--black);
+			height: 100%;
+			width: 100%;
+		}
+
+		.eyelash {
+			height: 30%;
+			width: 15%;
+			top: -20%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.eyelash::before,
+		.eyelash::after {
+			content: '';
+			display: inline-block;
+			top: 40%;
+		}
+
+		.eyelash::before {
+			left: -170%;
+			-webkit-transform: rotate(-45deg);
+			   -moz-transform: rotate(-45deg);
+			    -ms-transform: rotate(-45deg);
+			     -o-transform: rotate(-45deg);
+			        transform: rotate(-45deg);
+		}
+
+		.eyelash::after {
+			right: -170%;
+			-webkit-transform: rotate(45deg);
+			   -moz-transform: rotate(45deg);
+			    -ms-transform: rotate(45deg);
+			     -o-transform: rotate(45deg);
+			        transform: rotate(45deg);
+		}
+
+		.nose {
+			width: 10%;
+			height: 7.5%;
+			left: 50%;
+			top: 55%;
+			border-radius: 50px;
+			z-index: 1;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			background-color: var(--black);
+		}
+
+		.cheek-left,
+		.cheek-right {
+			width: 25%;
+			height: 20%;
+			border-radius: 50px;
+			background-color: var(--pink);
+			top: 52%;
+			opacity: .5;
+		}
+
+		.cheek-left {
+			left: 0;
+		}
+
+		.cheek-right {
+			right: 0;
+		}
+
+		.beak {
+			width: 40%;
+			height: 15%;
+			background-color: gold;
+			left: 50%;
+			top: 60%;
+			border-radius: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box">
+
+		<!-- donald's head -->
+		<div class="head">
+
+			<div class="hat">
+				<div class="hat-top"></div>
+				<div class="hat-bot"></div>
+			</div>
+
+			<div class="bowtie">
+				<div class="bowtie-left"></div>
+				<div class="bowtie-middle"></div>
+				<div class="bowtie-right"></div>
+			</div>
+
+			<div class="face">
+
+				<div class="cheek-left"></div>
+				<div class="cheek-right"></div>
+
+				<div class="eye-left"></div>
+				<div class="eye-right"></div>
+
+				<div class="beak"></div>
+			</div>
+		</div>
+		
+		<!-- daisy's head -->
+		<div class="head">
+
+			<div class="heart"></div>
+
+			<div class="bow">
+				<div class="bow-left"></div>
+				<div class="bow-middle"></div>
+				<div class="bow-right"></div>
+			</div>
+
+			<div class="face">
+
+				<div class="cheek-left"></div>
+				<div class="cheek-right"></div>
+
+				<div class="eye-left">
+					<div class="eyelash"></div>
+				</div>
+				<div class="eye-right">
+					<div class="eyelash"></div>
+				</div>
+
+				<div class="beak"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
