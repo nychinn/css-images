@@ -1,7 +1,7 @@
 ### To do
 
 * Disney Tsum Tsum Grid
-* Sailor Moon Cats: Luna and Athena
+* Sailor Moon Cats: Luna and Artemis
 * Easter Theme!
 * Rubber Ducky
 * Glue Stick
