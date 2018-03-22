@@ -1,9 +1,10 @@
 ### To do
 
 * Disney Tsum Tsum Grid
-* Sailor Moon Cats: Luna and Artemis
+* ~~Sailor Moon Cats: Luna and Artemis~~ [--Link](https://nychinn.github.io/css-images/artemis-luna/)
 * Easter Theme!
 * Rubber Ducky
+* Tokidoki Characters
 * Glue Stick
 * Television
 * Makeup Palette

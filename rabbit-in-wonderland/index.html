@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rabbit in Wonderland</title>
+
+	<style>
+		:root {
+			--bg: #EDD2E0;
+			--black: #000;
+	    	--white: #FFF;
+	    	--blue: #62B6CB;
+	    	--pink: #F9A7A7;
+		}
+
+		body {
+			background-color: var(--bg);
+		}
+
+		.box {
+			position: relative;
+			width: 500px;
+			height: 500px;
+			margin: auto;
+			margin-top: 10%;
+		}
+
+		.rabbit,
+		.ear,
+		.ear::before,
+		.ear::after,
+		.ear-inner,
+		.bow,
+		.head,
+		.body,
+		.arm,
+		.hand,
+		.dress,
+		.collar,
+		.apron {
+			box-sizing: border-box;
+			position: absolute;
+			display: inline-block;
+		}
+
+		.rabbit {
+			border: 1px solid red;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			width: 300px;
+			height: 400px;
+		}
+
+		.head {
+			width: 15em;
+			height: 14em;
+			border-radius: 50% 50% 40% 40%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			background-color: var(--white);
+		}
+
+		.ear {
+			top: -18%;
+			border: 3em solid transparent;
+			border-top: 10em solid var(--white);
+			width: 2em;
+		}
+
+		.ear::before {
+		    content: '';
+		    width: 6em;
+		    height: 6em;
+		    background-color: var(--white);
+            top: -13.36em;
+    		left: -3em;
+		    border-radius: 50%;
+		}
+
+		.ear-left {
+			left: 25%;
+			-webkit-transform: rotate(-16deg);
+			   -moz-transform: rotate(-16deg);
+			    -ms-transform: rotate(-16deg);
+			     -o-transform: rotate(-16deg);
+			        transform: rotate(-16deg);
+			
+		}
+
+		.ear-right {
+			right: 25%;
+			-webkit-transform: rotate(16deg);
+			   -moz-transform: rotate(16deg);
+			    -ms-transform: rotate(16deg);
+			     -o-transform: rotate(16deg);
+			        transform: rotate(16deg);
+		}
+
+
+	</style>
+</head>
+
+<body>
+
+	<div class="box">
+		
+		<div class="rabbit">
+			
+			<div class="ear ear-left">
+				<div class="ear-inner"></div>
+			</div>
+			<div class="ear ear-right">
+				<div class="ear-inner"></div>
+			</div>
+
+			<div class="bow">
+				<div class="bow-left"></div>
+				<div class="bow-mid"></div>
+				<div class="bow-right"></div>
+			</div>
+
+			<div class="head">
+				<div class="eye eye-left"></div>
+				<div class="eye eye-right"></div>
+				<div class="cheek cheek-left"></div>
+				<div class="cheek cheek-right"></div>
+				<div class="nose"></div>
+				<div class="mouth"></div>
+			</div>
+
+			<div class="body">
+				<div class="arm arm-left">
+					<div class="hand"></div>
+				</div>
+				<div class="arm arm-right">
+					<div class="hand"></div>
+				</div>
+				<div class="dress">
+					<div class="collar"></div>
+					<div class="apron"></div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+</body>
+
+</html>
+
+
+
+
+
+
