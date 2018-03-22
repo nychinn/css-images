@@ -10,9 +10,12 @@
 	    	--black: #333;
 	    	--white: #FFF;
 	    	--luna: #3E3D50;
+	    	--luna: #4E4D5E;
 	    	--yellow: #F4E04D;
 	    	--red: #EE1A2F;
 	    	--pink: #FFC1B5;
+	    	--cheek: rgba(249,167,167,0.5);
+	    	--mouth: #F9A7A7;
 	    	--blue: #3185FC;
 		}
 
@@ -33,6 +36,11 @@
 		.moon,
 		.eyebrow,
 		.eye,
+		.eye::before,
+		.eye::after,
+		.eyelashes,
+		.eyelashes::before,
+		.eyelashes::after,
 		.nose,
 		.mouth,
 		.ear,
@@ -42,9 +50,15 @@
 		.ear-inner,
 		.ear-inner::before,
 		.ear-inner::after,
+		.cheek,
+		.cheek-left,
+		.cheek-right,
 		.whiskers,
+		.whiskers::before,
+		.whiskers::after,
 		.whiskers-left,
 		.whiskers-right {
+			box-sizing: border-box;
 			display: inline-block;
 			position: absolute;
 		}
@@ -89,6 +103,164 @@
 			box-shadow: 0 15px 0 0 var(--yellow);
 		}
 
+		/*.eyebrow {
+			width: 2.75em;
+			height: 1.5em;
+			border-radius: 50%;
+			box-shadow: 0 -0.3em 0 0 var(--black);
+			top: 40%;
+		}
+
+		.eyebrow-left {
+			left: 17%;
+		}
+
+		.eyebrow-right {
+			right: 17%;
+		}*/
+
+		.luna .eyebrow-left {
+			-webkit-transform: rotate(-20deg);
+			   -moz-transform: rotate(-20deg);
+			    -ms-transform: rotate(-20deg);
+			     -o-transform: rotate(-20deg);
+			        transform: rotate(-20deg);
+		}
+
+		.luna .eyebrow-right {
+			-webkit-transform: rotate(15deg);
+			   -moz-transform: rotate(15deg);
+			    -ms-transform: rotate(15deg);
+			     -o-transform: rotate(15deg);
+			        transform: rotate(15deg);
+		}
+
+		.eye {
+			height: 4em;
+			width: 3em;
+			border-radius: 50px;
+			background-color: var(--black);
+			top: 48%;
+			z-index: 1;
+		}
+
+		.eye::before {
+			content: '';
+			width: 1.5em;
+			height: 2em;
+			border-radius: 50px;
+			bottom: 1em;
+		}
+
+		.eye::after {
+			content: '';
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 50%;
+			background-color: var(--white);
+			right: 0.25em;
+			bottom: 1em;
+		}
+
+		.athena .eye::before {
+			background-color: var(--blue);
+		}
+
+		.luna .eye::before {
+			background-color: var(--red);
+		}
+
+		.eye-left {
+			left: 16%;
+		}
+
+		.eye-right {
+			right: 16%;
+		}
+
+		.eye-left::before {
+			left: 16%;
+			right: 0.5em;
+		}
+
+		.eye-right::before {
+			right: 16%;
+			left: 0.5em;
+		}
+
+		.eyelashes {
+			height: 1em;
+			width: 0.4em;
+			top: 5.5em;
+			background-color: var(--black);
+		}
+
+		.eyelashes::before,
+		.eyelashes::after {
+			content: '';
+			top: 0.25em;
+		}
+
+		.eyelashes::before {
+			height: 100%;
+			width: 100%;
+			background-color: var(--black);
+			left: -1em;
+			-webkit-transform: rotate(-30deg);
+			   -moz-transform: rotate(-30deg);
+			    -ms-transform: rotate(-30deg);
+			     -o-transform: rotate(-30deg);
+			        transform: rotate(-30deg);
+		}
+
+		.eyelashes::after {
+			height: 100%;
+			width: 100%;
+			background-color: var(--black);
+			right: -1em;
+			-webkit-transform: rotate(30deg);
+			   -moz-transform: rotate(30deg);
+			    -ms-transform: rotate(30deg);
+			     -o-transform: rotate(30deg);
+			        transform: rotate(30deg);
+		}
+
+		.eyelashes-left {
+			left: 3.8em;
+		}
+
+		.eyelashes-right {
+			right: 3.8em;
+		}
+
+		.nose {
+			width: 1em;
+			height: 0.75em;
+			background-color: var(--pink);
+			top: 65%;
+			left: 50%;
+			border-radius: 10px;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.mouth {
+			width: 2.5em;
+			height: 1.5em;
+			background-color: var(--mouth);
+			top: 80%;
+			left: 50%;
+			border-radius: 5px 5px 20px 20px;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
 		.ear {
 			border: 3em solid transparent;
 			border-bottom: 7em solid blue;
@@ -127,8 +299,6 @@
 		    -ms-transform: rotate(-20deg);
 		    -o-transform: rotate(-20deg);
 		    transform: rotate(-20deg);
-		    /*right: -1.15em;
-		    top: 0.2em;*/
 	        right: -0.75em;
 			top: 0.2em;
 		}
@@ -152,11 +322,12 @@
 		}
 		
 		.ear-left .ear-inner {
-			left: -35px;
+			left: -32px;
 		}
 
 		.ear-right .ear-inner {
-			right: -40px;
+			right: -36px;
+			top: -37px;
 		}
 
 		.ear-tip {
@@ -211,8 +382,12 @@
 		    -ms-transform: rotate(-16deg);
 		    -o-transform: rotate(-16deg);
 		    transform: rotate(-16deg);
-		    left: -7px;
-    		top: 1px
+		    /*left: -7px;*/
+    		/*top: 1px*/
+		    /*left: -8px;
+			top: 2px;*/
+		    left: -8.25px;
+			top: 2.5px;
 		}
 
 		.athena .ear {
@@ -231,6 +406,74 @@
 		.luna .ear::before,
 		.luna .ear::after {
 			box-shadow: 30px 0 0 0 var(--luna);
+		}
+
+		.cheek {
+			width: 2.5em;
+			height: 2em;
+			background-color: var(--cheek);
+			border-radius: 50px;
+			top: 72%;
+		}
+
+		.cheek-left {
+			left: 13%;
+		}
+
+		.cheek-right {
+			right: 13%;
+		}
+
+		.whiskers {
+			height: 2em;
+			width: 0.25em;
+			background-color: var(--black);
+			top: 68%;
+		}
+
+		.whiskers::before,
+		.whiskers::after {
+			content: '';
+			height: 100%;
+			width: 100%;
+			background-color: var(--black);
+			top: 0.25em;
+		}
+
+		.whiskers::before {
+			left: -1em;
+			-webkit-transform: rotate(-20deg);
+			   -moz-transform: rotate(-20deg);
+			    -ms-transform: rotate(-20deg);
+			     -o-transform: rotate(-20deg);
+			        transform: rotate(-20deg);
+		}
+
+		.whiskers::after {
+			right: -1em;
+			-webkit-transform: rotate(20deg);
+			   -moz-transform: rotate(20deg);
+			    -ms-transform: rotate(20deg);
+			     -o-transform: rotate(20deg);
+			        transform: rotate(20deg);
+		}
+
+		.whiskers-left {
+			left: 0.15em;
+			-webkit-transform: rotate(-90deg);
+			   -moz-transform: rotate(-90deg);
+			    -ms-transform: rotate(-90deg);
+			     -o-transform: rotate(-90deg);
+			        transform: rotate(-90deg);
+		}
+
+		.whiskers-right {
+			right: 0.15em;
+			-webkit-transform: rotate(90deg);
+			   -moz-transform: rotate(90deg);
+			    -ms-transform: rotate(90deg);
+			     -o-transform: rotate(90deg);
+			        transform: rotate(90deg);
 		}
 	</style>
 </head>
@@ -256,10 +499,10 @@
 				<div class="ear-tip"></div>
 				<div class="ear-inner"></div>
 			</div>
-			<div class="whiskers">
-				<div class="whiskers-left"></div>
-				<div class="whiskers-right"></div>
-			</div>
+			<div class="cheek cheek-left"></div>
+			<div class="cheek cheek-right"></div>
+			<div class="whiskers whiskers-left"></div>
+			<div class="whiskers whiskers-right"></div>
 		</div>
 		
 		<div class="luna">
@@ -267,6 +510,8 @@
 				<div class="moon"></div>
 				<div class="eyebrow eyebrow-left"></div>
 				<div class="eyebrow eyebrow-right"></div>
+				<div class="eyelashes eyelashes-left"></div>
+				<div class="eyelashes eyelashes-right"></div>
 				<div class="eye eye-left"></div>
 				<div class="eye eye-right"></div>
 				<div class="nose"></div>
@@ -280,10 +525,10 @@
 				<div class="ear-tip"></div>
 				<div class="ear-inner"></div>
 			</div>
-			<div class="whiskers">
-				<div class="whiskers-left"></div>
-				<div class="whiskers-right"></div>
-			</div>
+			<div class="cheek cheek-left"></div>
+			<div class="cheek cheek-right"></div>
+			<div class="whiskers whiskers-left"></div>
+			<div class="whiskers whiskers-right"></div>
 		</div>
 
 	</div>
