@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Athena and Luna</title>
+
+	<style>
+		:root {
+			--bg: #DDD;
+	    	--black: #333;
+	    	--white: #FFF;
+	    	--luna: #3E3D50;
+	    	--yellow: #F4E04D;
+	    	--red: #EE1A2F;
+	    	--pink: #FFC1B5;
+	    	--blue: #3185FC;
+		}
+
+		body {
+			background-color: var(--bg);
+		}
+
+		.box {
+			width: 1000px;
+			height: 500px;
+			border: 1px solid #ccc;
+			margin: auto;
+			margin-top: 8%;
+		}
+
+		.athena,
+		.luna,
+		.moon,
+		.eyebrow,
+		.eye,
+		.nose,
+		.mouth,
+		.ear,
+		.ear::before,
+		.ear::after,
+		.ear-tip,
+		.ear-inner,
+		.ear-inner::before,
+		.ear-inner::after,
+		.whiskers,
+		.whiskers-left,
+		.whiskers-right {
+			display: inline-block;
+			position: absolute;
+		}
+
+		.athena,
+		.luna {
+			width: 250px;
+			height: 210px;
+			border-radius: 50% 50% 40% 40%;
+			background: blue;
+		}
+		
+		/* athena: specific colours */
+		.athena {
+			left: 28%;
+			background-color: var(--white);
+		}
+
+			
+		
+		/* luna: specific colours */
+		.luna {
+			right: 28%;
+			background-color: var(--luna);
+		}
+
+			
+		
+		/* both cats' styles */
+		
+		.moon {
+			width: 48px;
+			height: 48px;
+			/*background: red;*/
+			border-radius: 50%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			box-shadow: 0 15px 0 0 var(--yellow);
+		}
+
+		.ear {
+			border: 3em solid transparent;
+			border-bottom: 7em solid blue;
+			z-index: -1;
+			top: -55%;
+		}
+
+		.ear::before,
+		.ear::after {
+			content: '';
+		}
+
+		.ear::before {
+			height: 9em;
+		    width: 1em;
+		    border-radius: 240% 0 0 50%;
+		    box-shadow: 30px 0 0 0 blue;
+		    -webkit-transform: rotate(20deg);
+		    -moz-transform: rotate(20deg);
+		    -ms-transform: rotate(20deg);
+		    -o-transform: rotate(20deg);
+		    transform: rotate(20deg);
+		    /*left: -4.4em;
+		    top: -1.5em;*/
+	        left: -4.0em;
+			top: -1.2em;
+		}
+
+		.ear::after {
+		    height: 9em;
+		    width: 1em;
+		    border-radius: 0 244% 50% 0;
+		    box-shadow: 30px 0 0 0 blue;
+		    -webkit-transform: rotate(-20deg);
+		    -moz-transform: rotate(-20deg);
+		    -ms-transform: rotate(-20deg);
+		    -o-transform: rotate(-20deg);
+		    transform: rotate(-20deg);
+		    /*right: -1.15em;
+		    top: 0.2em;*/
+	        right: -0.75em;
+			top: 0.2em;
+		}
+
+		.ear-left {
+		    left: -10%;
+		    transform: rotate(-24deg);
+		}
+
+		.ear-right{
+		    right: -10%;
+		    transform: rotate(24deg);
+		}
+
+		.ear-inner {
+			border: 2em solid transparent;
+		    border-bottom: 7em solid var(--pink);
+		    z-index: 1;
+		    width: 3px;
+    		top: -35px;
+		}
+		
+		.ear-left .ear-inner {
+			left: -35px;
+		}
+
+		.ear-right .ear-inner {
+			right: -40px;
+		}
+
+		.ear-tip {
+			content: '';
+			width: 1em;
+			height: 1em;
+			border-radius: 50%;
+			z-index: -2;
+		}
+
+		.ear-left .ear-tip {
+		    top: -4px;
+			left: -8px;
+		}
+
+		.ear-right .ear-tip {
+			top: -5px;
+    		left: -3px;
+		}
+
+		.athena .ear-tip {
+			background-color: var(--white);
+		}
+
+		.luna .ear-tip {
+			background-color: var(--luna);
+		}
+
+		.ear-left .ear-inner::before {
+		    content: '';
+		    height: 10em;
+		    width: 1.3em;
+		    border-radius: 240% 0 0 50%;
+		    box-shadow: 30px 0 0 0 var(--pink);
+		    -webkit-transform: rotate(16deg);
+		    -moz-transform: rotate(16deg);
+		    -ms-transform: rotate(16deg);
+		    -o-transform: rotate(16deg);
+		    transform: rotate(16deg);
+		    left: -71px;
+    		top: -15px
+		}
+
+		.ear-right .ear-inner::before {
+		    content: '';
+		    height: 10em;
+		    width: 1.3em;
+		    border-radius: 0 240% 50% 0;
+		    box-shadow: 30px 0 0 0 var(--pink);
+		    -webkit-transform: rotate(-16deg);
+		    -moz-transform: rotate(-16deg);
+		    -ms-transform: rotate(-16deg);
+		    -o-transform: rotate(-16deg);
+		    transform: rotate(-16deg);
+		    left: -7px;
+    		top: 1px
+		}
+
+		.athena .ear {
+			border-bottom-color: var(--white);
+		}
+
+		.athena .ear::before,
+		.athena .ear::after {
+			box-shadow: 30px 0 0 0 var(--white);
+		}
+
+		.luna .ear {
+			border-bottom-color: var(--luna);
+		}
+
+		.luna .ear::before,
+		.luna .ear::after {
+			box-shadow: 30px 0 0 0 var(--luna);
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box">
+
+		<div class="athena">
+			<div class="head">
+				<div class="moon"></div>
+				<div class="eyebrow eyebrow-left"></div>
+				<div class="eyebrow eyebrow-right"></div>
+				<div class="eye eye-left"></div>
+				<div class="eye eye-right"></div>
+				<div class="nose"></div>
+				<div class="mouth"></div>
+			</div>
+			<div class="ear ear-left">
+				<!-- <div class="ear-tip"></div> -->
+				<div class="ear-inner"></div>
+			</div>
+			<div class="ear ear-right">
+				<div class="ear-tip"></div>
+				<div class="ear-inner"></div>
+			</div>
+			<div class="whiskers">
+				<div class="whiskers-left"></div>
+				<div class="whiskers-right"></div>
+			</div>
+		</div>
+		
+		<div class="luna">
+			<div class="head">
+				<div class="moon"></div>
+				<div class="eyebrow eyebrow-left"></div>
+				<div class="eyebrow eyebrow-right"></div>
+				<div class="eye eye-left"></div>
+				<div class="eye eye-right"></div>
+				<div class="nose"></div>
+				<div class="mouth"></div>
+			</div>
+			<div class="ear ear-left">
+				<!-- <div class="ear-tip"></div> -->
+				<div class="ear-inner"></div>
+			</div>
+			<div class="ear ear-right">
+				<div class="ear-tip"></div>
+				<div class="ear-inner"></div>
+			</div>
+			<div class="whiskers">
+				<div class="whiskers-left"></div>
+				<div class="whiskers-right"></div>
+			</div>
+		</div>
+
+	</div>
+	
+</body>
+</html>
+
+

@@ -1,9 +1,14 @@
 ### To do
 
 * Disney Tsum Tsum Grid
+* Sailor Moon Cats: Luna and Athena
+* Easter Theme!
+* Rubber Ducky
 * Glue Stick
+* Television
 * Makeup Palette
 * Tape Dispenser
+* Toast Popping out of Toaster
 * Pencil
 * Mango Pudding
 * Lamp
