@@ -7,12 +7,15 @@
 	<style>
 		:root {
 			--bg: #EDD2E0;
+	    	--ground: #E2ACC8;
 			--black: #333;
 			--lblack: #444;
 	    	--white: #FFF;
 	    	--lwhite: #F8F8F8;
+	    	--yellow: #FFE9AF;
 	    	--blue: #1C77C3;
 	    	--pink: #FCD1DD;
+	    	--heart: #E0455F;
 	    	--cheek: rgba(252,209,221, 0.35);
 		}
 
@@ -27,7 +30,10 @@
 			margin: auto;
 			margin-top: 10%;
 		}
-
+		
+		.ground,
+		.star,
+		.star::before,
 		.rabbit,
 		.ear,
 		.ear::before,
@@ -54,8 +60,11 @@
 		.body::after,
 		.arm,
 		.arm::before,
-		.hand,
 		.dress,
+		.foot,
+		.foot::before,
+		.foot::after,
+		.foot,
 		.collar,
 		.collar::before,
 		.collar::after,
@@ -65,6 +74,9 @@
 		.apron-bot,
 		.apron-bot::before,
 		.apron-bot::after,
+		.apron-heart,
+		.apron-heart::before,
+		.apron-heart::after,
 		.apron,
 		.apron::before,
 		.apron::after {
@@ -83,6 +95,7 @@
 			        transform: translateX(-50%);
 			width: 300px;
 			height: 500px;
+			z-index: 1;
 		}
 
 		.bow {
@@ -400,27 +413,27 @@
 
 		.arm {
 			width: 2.5em;
-			height: 6.25em;
+			height: 7.25em;
 			background-color: var(--blue);
 			border-radius: 0 0 10px 10px;
-			top: 80%;
+			top: -0.5em;
 		}
 
 		.arm::before {
 			content: '';
-			height: 1.75em;
-			width: 1.75em;
-			bottom: -1.75em;
-			border-radius: 0 0 50% 50%;
+			height: 1em;
+			width: 1.5em;
+			bottom: -1em;
+			border-radius: 0 0 50px 50px;
 			background-color: var(--white);
 		}
 		
 		.arm-left::before {
-			left: 0.25em;
+			left: 0.5em;
 		}
 
 		.arm-right::before {
-			right: 0.25em;
+			right: 0.5em;
 		}
 
 		.arm-left {
@@ -561,6 +574,146 @@
 			box-sizing: content-box;
 		}
 
+		.apron-heart {
+			left: 1em;
+			top: 0.6em;
+			-webkit-transform: translateX(-50%) scale(0.35);
+			   -moz-transform: translateX(-50%) scale(0.35);
+			    -ms-transform: translateX(-50%) scale(0.35);
+			     -o-transform: translateX(-50%) scale(0.35);
+			        transform: translateX(-50%) scale(0.35);
+		}
+
+		.apron-heart::before,
+		.apron-heart::after {
+			content: '';
+			height: 3em;
+			width: 2em;
+			border-radius: 50px 50px 0 0;
+			background-color: var(--heart);
+		}
+
+		.apron-heart::before {
+			left: -1.35em;
+			-webkit-transform: rotate(-45deg);
+			   -moz-transform: rotate(-45deg);
+			    -ms-transform: rotate(-45deg);
+			     -o-transform: rotate(-45deg);
+			        transform: rotate(-45deg);
+		}
+
+		.apron-heart::after {
+			right: -1.35em;
+			-webkit-transform: rotate(45deg);
+			   -moz-transform: rotate(45deg);
+			    -ms-transform: rotate(45deg);
+			     -o-transform: rotate(45deg);
+			        transform: rotate(45deg);
+		}
+
+		.foot {
+			height: 2em;
+			width: 1.75em;
+			background-color: var(--white);
+			border-radius: 0 0 10px 10px;
+			bottom: -3%;
+			z-index: -1;
+			
+		}
+
+		.foot::before,
+		.foot::after {
+			content: '';
+		}
+
+		/*.foot::before {
+			width: 100%;
+			height: 50%;
+			background-color: var(--black);
+			bottom: 0;
+			border-radius: 0 0 10px 10px;
+		}*/
+
+		/*.foot::after {
+			width: 40%;
+			height: 13%;
+			bottom: 23%;
+			left: 30%;
+			border-radius: 0 0 10px 10px;
+			background-color: var(--white);
+		}*/
+
+		.foot-left {
+			left: 40%;
+		}
+
+		.foot-right {
+			right: 40%;
+		}
+
+		.ground {
+			width: 75%;
+			height: 20%;
+			border-radius: 50%;
+			background-color: var(--ground);
+			bottom: -10%;
+			z-index: -1;
+			left: 12.5%;
+		}
+
+		.stars {
+			z-index: -1;
+		}
+
+		.star {
+			width: 5em;
+			height: 6em;
+			background-color: var(--white);
+		}
+
+		.star::before {
+			content: '';
+			width: 5em;
+			height: 6em;
+			border-radius: 50%;
+			left: -50%;
+			top: -50%;
+			background-color: var(--bg);
+			box-shadow: 5em 0 0 0 var(--bg),
+						0 6em 0 0 var(--bg),
+						5em 6em 0 0 var(--bg)
+			;
+		}
+
+		.star:nth-child(1) {
+			top: 10%;
+		}
+
+		.star:nth-child(2) {
+			top: 25%;
+			right: 0;
+		}
+
+		.star:nth-child(3) {
+			top: 60%;
+			left: 10%;
+			-webkit-transform: scale(0.7);
+			   -moz-transform: scale(0.7);
+			    -ms-transform: scale(0.7);
+			     -o-transform: scale(0.7);
+			        transform: scale(0.7);
+		}
+
+		.star:nth-child(4) {
+			top: 40%;
+			right: 10%;
+			-webkit-transform: scale(0.4);
+			   -moz-transform: scale(0.4);
+			    -ms-transform: scale(0.4);
+			     -o-transform: scale(0.4);
+			        transform: scale(0.4);
+		}
+
 
 	</style>
 </head>
@@ -606,9 +759,22 @@
 			<div class="apron">
 				<div class="apron-top"></div>
 				<div class="apron-bot"></div>
+				<div class="apron-heart"></div>
 			</div>
 
+			<div class="foot foot-left"></div>
+			<div class="foot foot-right"></div>
 		</div>
+
+		<div class="ground"></div>
+		
+		<div class="stars">
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star"></div>
+		</div>
+		
 
 	</div>
 	
