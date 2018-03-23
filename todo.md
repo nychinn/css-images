@@ -47,6 +47,7 @@
 * Various Fruit and Vegetables
 * Iconic Memes
 * Taylor Swift MV Outfits
+* Sylvanian Families
 * Hello Kitty 40th Anniversary McDonalds Toys [one](http://www.followkitty.com/toy/singapore-mcdonalds-launched-hello-kitty-bubbly-world-40th-anniversary-set/) [two](http://www.nextstophongkong.com/hong-kong-mcdonalds-hello-kitty-sanrio-bubbly-day/)
 * Various Pokemon
 	* Ditto Pokemon [one](https://nintendosoup.com/transform-ditto-getting-new-lineup-pokemon-center-original-plushies/)

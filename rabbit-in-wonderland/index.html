@@ -7,10 +7,13 @@
 	<style>
 		:root {
 			--bg: #EDD2E0;
-			--black: #000;
+			--black: #333;
+			--lblack: #444;
 	    	--white: #FFF;
-	    	--blue: #62B6CB;
-	    	--pink: #F9A7A7;
+	    	--lwhite: #F8F8F8;
+	    	--blue: #1C77C3;
+	    	--pink: #FCD1DD;
+	    	--cheek: rgba(252,209,221, 0.35);
 		}
 
 		body {
@@ -30,21 +33,48 @@
 		.ear::before,
 		.ear::after,
 		.ear-inner,
+		.ear-inner::before,
 		.bow,
+		.bow-left,
+		.bow-mid,
+		.bow-right,
 		.head,
+		.eye,
+		.eye::before,
+		.eye::after,
+		.eyelash,
+		.eyelash::before,
+		.eyelash::after,
+		.nose,
+		.cheek,
+		.mouth,
+		.mouth::before,
+		.mouth::after,
 		.body,
+		.body::after,
 		.arm,
+		.arm::before,
 		.hand,
 		.dress,
 		.collar,
-		.apron {
+		.collar::before,
+		.collar::after,
+		.apron-top,
+		.apron-top::before,
+		.apron-top::after,
+		.apron-bot,
+		.apron-bot::before,
+		.apron-bot::after,
+		.apron,
+		.apron::before,
+		.apron::after {
 			box-sizing: border-box;
 			position: absolute;
 			display: inline-block;
 		}
 
 		.rabbit {
-			border: 1px solid red;
+			/*border: 1px solid red;*/
 			left: 50%;
 			-webkit-transform: translateX(-50%);
 			   -moz-transform: translateX(-50%);
@@ -52,13 +82,62 @@
 			     -o-transform: translateX(-50%);
 			        transform: translateX(-50%);
 			width: 300px;
-			height: 400px;
+			height: 500px;
+		}
+
+		.bow {
+		    width: 8em;
+		    height: 4.5em;
+		    border-radius: 50%;
+		    left: 50%;
+		    top: 33%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			box-shadow: 0 -1em 0 0 var(--black);
+			z-index: 3;
+		}
+
+		.bow-left {
+			width: 2.5em;
+			height: 2.5em;
+			border-radius: 30% 50% 50% 30%;
+			background-color: var(--lblack);
+			top: -36%;
+    		left: 16%;
+		}
+
+		.bow-mid {
+			width: 2em;
+			height: 2em;
+			border-radius: 50px;
+			left: 50%;
+			top: -32%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			background-color: var(--black);
+			z-index: 1;
+		}
+
+		.bow-right {
+			width: 2.5em;
+			height: 2.5em;
+			border-radius: 50% 30% 30% 50%;
+			background-color: var(--lblack);
+			top: -36%;
+    		right: 16%;
 		}
 
 		.head {
 			width: 15em;
-			height: 14em;
-			border-radius: 50% 50% 40% 40%;
+			height: 13.5em;
+			border-radius: 60% 60% 40% 40%;
+			top: 30%;
 			left: 50%;
 			-webkit-transform: translateX(-50%);
 			   -moz-transform: translateX(-50%);
@@ -66,10 +145,12 @@
 			     -o-transform: translateX(-50%);
 			        transform: translateX(-50%);
 			background-color: var(--white);
+			z-index: 2;
+			border-bottom: 2px solid rgba(0,0,0,0.05);
 		}
 
 		.ear {
-			top: -18%;
+			top: 17%;
 			border: 3em solid transparent;
 			border-top: 10em solid var(--white);
 			width: 2em;
@@ -86,7 +167,7 @@
 		}
 
 		.ear-left {
-			left: 25%;
+			left: 27%;
 			-webkit-transform: rotate(-16deg);
 			   -moz-transform: rotate(-16deg);
 			    -ms-transform: rotate(-16deg);
@@ -96,12 +177,388 @@
 		}
 
 		.ear-right {
-			right: 25%;
+			right: 27%;
 			-webkit-transform: rotate(16deg);
 			   -moz-transform: rotate(16deg);
 			    -ms-transform: rotate(16deg);
 			     -o-transform: rotate(16deg);
 			        transform: rotate(16deg);
+		}
+
+		.ear-inner {
+			top: 20%;
+			border: 1.5em solid transparent;
+			border-top: 8em solid var(--pink);
+			width: 2em;
+		}
+
+		.ear-inner::before {
+		    content: '';
+		    width: 3em;
+		    height: 3em;
+		    background-color: var(--pink);
+            top: -9.6em;
+    		left: -1.5em;
+		    border-radius: 50%;
+		}
+
+		.ear-inner-left {
+			left: 34%;
+			-webkit-transform: rotate(-16deg);
+			   -moz-transform: rotate(-16deg);
+			    -ms-transform: rotate(-16deg);
+			     -o-transform: rotate(-16deg);
+			        transform: rotate(-16deg);
+			
+		}
+
+		.ear-inner-right {
+			right: 34%;
+			-webkit-transform: rotate(16deg);
+			   -moz-transform: rotate(16deg);
+			    -ms-transform: rotate(16deg);
+			     -o-transform: rotate(16deg);
+			        transform: rotate(16deg);
+		}
+
+		.eye {
+			width: 3em;
+			height: 3.5em;
+			border-radius: 50px;
+			background-color: var(--black);
+			top: 55%;
+			z-index: 1;
+		}
+
+		/*.eye::before {
+			content: '';
+			width: 1em;
+			height: 1em;
+			right: -.5em;
+			top: 1.25em;
+			background-color: var(--white);
+			-webkit-transform: rotate(45deg);
+			   -moz-transform: rotate(45deg);
+			    -ms-transform: rotate(45deg);
+			     -o-transform: rotate(45deg);
+			        transform: rotate(45deg);
+		}*/
+
+		.eye::after {
+			content: '';
+			width: 1em;
+			height: 1em;
+			border-radius: 50%;
+			background-color: var(--white);
+			top: 20%;
+			right: 20%;
+		}
+
+		.eye-left {
+			left: 15%;
+		}
+
+		.eye-right {
+			right: 15%;
+		}
+
+		.eyelash {
+			width: 0.35em;
+			height: 2em;
+			background-color: var(--black);
+			top: 50%;
+		}
+
+		.eyelash-left {
+			left: 24%;
+		}
+
+		.eyelash-right {
+			right: 24%;
+		}
+
+		.eyelash::before,
+		.eyelash::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: var(--black);
+			top: 0.2em;
+		}
+
+		.eyelash::before {
+			left: -150%;
+			-webkit-transform: rotate(-25deg);
+			   -moz-transform: rotate(-25deg);
+			    -ms-transform: rotate(-25deg);
+			     -o-transform: rotate(-25deg);
+			        transform: rotate(-25deg);
+		}
+
+		.eyelash::after {
+			right: -150%;
+			-webkit-transform: rotate(25deg);
+			   -moz-transform: rotate(25deg);
+			    -ms-transform: rotate(25deg);
+			     -o-transform: rotate(25deg);
+			        transform: rotate(25deg);
+		}
+
+		.nose {
+			width: 1em;
+			height: 0.75em;
+			background-color: var(--pink);
+			top: 70%;
+			left: 50%;
+			border-radius: 50px;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.cheek {
+			width: 3em;
+			height: 2em;
+			background-color: var(--cheek);
+			top: 74%;
+			border-radius: 50px;
+		}
+
+		.cheek-left {
+			left: 10%;
+		}
+
+		.cheek-right {
+			right: 10%;
+		}
+
+		.mouth {
+			top: 80%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.mouth::before,
+		.mouth::after {
+			content: '';
+			width: 1.25em;
+			height: 0.8em;
+		}
+
+		.mouth::before {
+			box-shadow: -0.1em 0.3em 0 0 var(--pink);
+			/*left: -24%;*/
+			left: 0%;
+			border-radius: 50% 30% 30% 50%;
+		}
+
+		.mouth::after {
+			box-shadow: 0.1em 0.3em 0 0 var(--pink);
+			right: 0%;
+			border-radius: 50% 30% 50% 30%;
+		}
+
+		.body {
+		    border: 2em solid transparent;
+		    border-bottom: 10em solid var(--blue);
+		    width: 4em;
+		    height: 0;
+			box-sizing: content-box;
+			top: 59%;
+			left: 50%;
+			border-radius: 0;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.body::after {
+			content: '';
+		    width: 3.5em;
+		    height: 1.5em;
+		    top: 100%;
+		    left: 50%;
+		    -webkit-transform: translateX(-50%);
+		       -moz-transform: translateX(-50%);
+		        -ms-transform: translateX(-50%);
+		         -o-transform: translateX(-50%);
+		            transform: translateX(-50%);
+		    margin-top: 35%;
+		    z-index: 1;
+		    position: absolute;
+		    display: block;
+		    background-color: #ddd;
+		}
+
+		.arm {
+			width: 2.5em;
+			height: 6.25em;
+			background-color: var(--blue);
+			border-radius: 0 0 10px 10px;
+			top: 80%;
+		}
+
+		.arm::before {
+			content: '';
+			height: 1.75em;
+			width: 1.75em;
+			bottom: -1.75em;
+			border-radius: 0 0 50% 50%;
+			background-color: var(--white);
+		}
+		
+		.arm-left::before {
+			left: 0.25em;
+		}
+
+		.arm-right::before {
+			right: 0.25em;
+		}
+
+		.arm-left {
+			left: -30%;
+			-webkit-transform: rotate(45deg);
+			   -moz-transform: rotate(45deg);
+			    -ms-transform: rotate(45deg);
+			     -o-transform: rotate(45deg);
+			        transform: rotate(45deg);
+		}
+
+		.arm-right {
+			right: -30%;
+			-webkit-transform: rotate(-45deg);
+			   -moz-transform: rotate(-45deg);
+			    -ms-transform: rotate(-45deg);
+			     -o-transform: rotate(-45deg);
+			        transform: rotate(-45deg);
+		}
+
+		.collar {
+			top: 73%;
+			left: 50%;
+			z-index: 1;
+		}
+
+		.collar::before,
+		.collar::after {
+			content: '';
+			width: 3em;
+			height: 1.5em;
+			border-radius: 0 0 50px 50px;
+			background-color: var(--white);
+			border-bottom: 2px solid rgba(0,0,0,0.2);
+		}
+
+		.collar::before {
+			left: 0;
+			-webkit-transform: rotate(-15deg);
+			   -moz-transform: rotate(-15deg);
+			    -ms-transform: rotate(-15deg);
+			     -o-transform: rotate(-15deg);
+			        transform: rotate(-15deg);
+		}
+
+		.collar::after {
+			right: 0;
+			-webkit-transform: rotate(15deg);
+			   -moz-transform: rotate(15deg);
+			    -ms-transform: rotate(15deg);
+			     -o-transform: rotate(15deg);
+			        transform: rotate(15deg);
+		}
+
+		.apron {
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			top: 80%;
+		}
+
+		.apron-top {
+			box-sizing: content-box;
+			width: 3.5em;
+			border: 0.5em solid transparent;
+			border-top: 2em solid var(--white);
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.apron-top::before {
+			content: '';
+			height: 4em;
+			width: 0.75em;
+			top: -5em;
+			left: -12px;
+			background-color: var(--white);
+			-webkit-transform: rotate(-15deg);
+			   -moz-transform: rotate(-15deg);
+			    -ms-transform: rotate(-15deg);
+			     -o-transform: rotate(-15deg);
+			        transform: rotate(-15deg);
+		}
+
+		.apron-top::after {
+			content: '';
+			height: 4em;
+			width: 0.75em;
+			top: -5em;
+			right: -12px;
+			background-color: var(--white);
+			-webkit-transform: rotate(15deg);
+			   -moz-transform: rotate(15deg);
+			    -ms-transform: rotate(15deg);
+			     -o-transform: rotate(15deg);
+			        transform: rotate(15deg);
+		}
+
+		.apron-bot {
+			box-sizing: content-box;
+			width: 5em;
+			border: 0.5em solid transparent;
+			border-bottom: 3.25em solid var(--white);
+			left: 50%;
+			top: 0.5em;
+			border-radius: 0 0 8px 8px;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.apron-bot::before {
+			content: '';
+			border: 0.2em solid transparent;
+			border-bottom: 1em solid var(--white);
+			width: 3em;
+			left: -.85em;
+			top: -3px;
+			box-sizing: content-box;
+		}
+
+		.apron-bot::after {
+			content: '';
+			border: 0.2em solid transparent;
+			border-bottom: 1em solid var(--white);
+			width: 3em;
+			right: -.85em;
+			top: -3px;
+			box-sizing: content-box;
 		}
 
 
@@ -114,12 +571,10 @@
 		
 		<div class="rabbit">
 			
-			<div class="ear ear-left">
-				<div class="ear-inner"></div>
-			</div>
-			<div class="ear ear-right">
-				<div class="ear-inner"></div>
-			</div>
+			<div class="ear ear-left"></div>
+			<div class="ear-inner ear-inner-left"></div>
+			<div class="ear ear-right"></div>
+			<div class="ear-inner ear-inner-right"></div>
 
 			<div class="bow">
 				<div class="bow-left"></div>
@@ -130,6 +585,8 @@
 			<div class="head">
 				<div class="eye eye-left"></div>
 				<div class="eye eye-right"></div>
+				<div class="eyelash eyelash-left"></div>
+				<div class="eyelash eyelash-right"></div>
 				<div class="cheek cheek-left"></div>
 				<div class="cheek cheek-right"></div>
 				<div class="nose"></div>
@@ -143,10 +600,12 @@
 				<div class="arm arm-right">
 					<div class="hand"></div>
 				</div>
-				<div class="dress">
-					<div class="collar"></div>
-					<div class="apron"></div>
-				</div>
+			</div>
+
+			<div class="collar"></div>
+			<div class="apron">
+				<div class="apron-top"></div>
+				<div class="apron-bot"></div>
 			</div>
 
 		</div>
