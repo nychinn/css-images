@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Makey Makey</title>
+
+	<style>
+		:root {
+			--red: #E81B00;
+	    	--white: #FFFFFF;	
+	    	--metal: #EDD4B2;
+		}
+
+		body {
+			
+		}
+
+		.box {
+			width: 500px;
+			height: 500px;
+			margin: auto;
+			margin-top: 8%;
+			border: 1px solid red;
+		}
+		
+		.makey,
+		.makey-top,
+		.makey-bot,
+		.arrows,
+		.arrows::before,
+		.arrows::after,
+		.arrow,
+		.buttons,
+		.button {
+			position: absolute;
+			box-sizing: border-box;
+			
+		}
+
+		.makey {
+			width: 500px;
+			height: 205px;
+			background-color: #ddd;
+		}
+
+		.makey-top {
+			width: 100%;
+			height: 80%;
+			background-color: var(--white);
+			border: 2px solid var(--red);
+			border-bottom-width: 10px;
+		}
+
+		.makey-bot {
+			width: 100%;
+			height: 20%;
+			background-color: var(--metal);
+			bottom: 0;
+		}
+
+		.arrows {
+			width: 23%;
+			height: 25%;
+			top: 50%;
+			left: 10%;
+			-webkit-transform: translate(0, -50%);
+			   -moz-transform: translate(0, -50%);
+			    -ms-transform: translate(0, -50%);
+			     -o-transform: translate(0, -50%);
+			        transform: translate(0, -50%);
+			background-color: var(--red);
+			border-radius: 8px;
+		}
+
+		.arrows::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			border-radius: 8px;
+			background-color: var(--red);
+			-webkit-transform: rotate(90deg);
+			   -moz-transform: rotate(90deg);
+			    -ms-transform: rotate(90deg);
+			     -o-transform: rotate(90deg);
+			        transform: rotate(90deg);
+		}
+
+		.arrows::after {
+			content: '';
+			width: 2em;
+			height: 2em;
+			border-radius: 50%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			background-color: var(--white);
+		}
+
+		.buttons {
+			right: 20%;
+			top: 50%;
+		}
+
+		.button {
+			width: 5em;
+			height: 5em;
+			border-radius: 50%;
+			background-color: var(--red);
+		}
+
+		.button-left {
+			right: 10%;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<!-- 1080 x 550 -->
+	
+	<div class="box">
+		
+		<div class="makey">
+			
+			<div class="makey-top">
+				<div class="arrows">
+					<div class="arrow arrow-top"></div>
+					<div class="arrow arrow-bot"></div>
+					<div class="arrow arrow-left"></div>
+					<div class="arrow arrow-right"></div>
+				</div>
+				<div class="buttons">
+					<div class="button button-left"></div>
+					<div class="button button-right"></div>
+				</div>
+			</div>
+
+			<div class="makey-bot">
+				
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
