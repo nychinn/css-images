@@ -6,13 +6,14 @@
 
 	<style>
 		:root {
+			--bg: #ED8F4B;
 			--red: #E81B00;
 	    	--white: #FFFFFF;	
-	    	--metal: #EDD4B2;
+	    	--metal: #E2C290;
 		}
 
 		body {
-			
+			background-color: var(--bg);
 		}
 
 		.box {
@@ -20,7 +21,7 @@
 			height: 500px;
 			margin: auto;
 			margin-top: 8%;
-			border: 1px solid red;
+			/*border: 1px solid red;*/
 		}
 		
 		.makey,
@@ -30,8 +31,11 @@
 		.arrows::before,
 		.arrows::after,
 		.arrow,
-		.buttons,
-		.button {
+		.arrow::before,
+		.arrow::after,
+		.button,
+		.button::before,
+		.button::after {
 			position: absolute;
 			box-sizing: border-box;
 			
@@ -39,30 +43,35 @@
 
 		.makey {
 			width: 500px;
-			height: 205px;
+			/*height: 300px;*/
+			height: 220px;
+			border-radius: 20px;
 			background-color: #ddd;
 		}
 
 		.makey-top {
 			width: 100%;
-			height: 80%;
+			height: 85%;
+			border-radius: 10px 10px 0 0;
 			background-color: var(--white);
-			border: 2px solid var(--red);
-			border-bottom-width: 10px;
+			/*border: 2px solid var(--red);*/
+			border-bottom: 10px solid var(--red);
 		}
 
 		.makey-bot {
 			width: 100%;
-			height: 20%;
+			height: 15%;
+			border-radius: 0 0 10px 10px;
 			background-color: var(--metal);
 			bottom: 0;
 		}
 
 		.arrows {
-			width: 23%;
-			height: 25%;
+			width: 32%;
+			height: 28%;
 			top: 50%;
 			left: 10%;
+			background-color: blue;
 			-webkit-transform: translate(0, -50%);
 			   -moz-transform: translate(0, -50%);
 			    -ms-transform: translate(0, -50%);
@@ -87,31 +96,143 @@
 
 		.arrows::after {
 			content: '';
-			width: 2em;
-			height: 2em;
+			width: 1.75em;
+			height: 1.75em;
 			border-radius: 50%;
 			left: 50%;
-			-webkit-transform: translateX(-50%);
-			   -moz-transform: translateX(-50%);
-			    -ms-transform: translateX(-50%);
-			     -o-transform: translateX(-50%);
-			        transform: translateX(-50%);
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			   -moz-transform: translate(-50%, -50%);
+			    -ms-transform: translate(-50%, -50%);
+			     -o-transform: translate(-50%, -50%);
+			        transform: translate(-50%, -50%);
 			background-color: var(--white);
 		}
 
-		.buttons {
-			right: 20%;
-			top: 50%;
+		.arrow {
+			width: 1.5em;
+			height: 2.25em;
+			background-color: var(--metal);
+			border-radius: 0 0 5px 5px;
+		}
+
+		.arrow::before {
+			content: '';
+			border: 1.25em solid transparent;
+			border-bottom: 1.25em solid var(--metal);
+			box-sizing: content-box;
+			width: 0.25em;
+			top: -100%;
+			left: 50%;
+			border-radius: 0 0 5px 5px;
+			-webkit-transform: translate(-50%, 0);
+			   -moz-transform: translate(-50%, 0);
+			    -ms-transform: translate(-50%, 0);
+			     -o-transform: translate(-50%, 0);
+			        transform: translate(-50%, 0);
+		}
+
+		.arrow::after{
+			content: '';
+			width: 1em;
+			height: 1em;
+			border-radius: 50%;
+			top: 4%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			   -moz-transform: translate(-50%, -50%);
+			    -ms-transform: translate(-50%, -50%);
+			     -o-transform: translate(-50%, -50%);
+			        transform: translate(-50%, -50%);
+			background-color: var(--bg);
+			box-shadow: 0 1.5em 0 0 var(--bg);
+		}
+
+		.arrow-top {
+			left: 50%;
+			top: -70%;
+			-webkit-transform: translate(-50%, 0);
+			   -moz-transform: translate(-50%, 0);
+			    -ms-transform: translate(-50%, 0);
+			     -o-transform: translate(-50%, 0);
+			        transform: translate(-50%, 0);
+		}
+
+		.arrow-bot {
+			bottom: -70%;
+			left: 35%;
+			-webkit-transform: rotate(180deg) translate(-50%, 0);
+			   -moz-transform: rotate(180deg) translate(-50%, 0);
+			    -ms-transform: rotate(180deg) translate(-50%, 0);
+			     -o-transform: rotate(180deg) translate(-50%, 0);
+			        transform: rotate(180deg) translate(-50%, 0);
+		}
+
+		.arrow-left {
+			top: 15%;
+			left: 28%;
+			-webkit-transform: rotate(-90deg) translate(0, -50%);
+			   -moz-transform: rotate(-90deg) translate(0, -50%);
+			    -ms-transform: rotate(-90deg) translate(0, -50%);
+			     -o-transform: rotate(-90deg) translate(0, -50%);
+			        transform: rotate(-90deg) translate(0, -50%);
+		}
+
+		.arrow-right {
+			top: 15%;
+			right: 28%;
+			-webkit-transform: rotate(90deg) translate(0, -50%);
+			   -moz-transform: rotate(90deg) translate(0, -50%);
+			    -ms-transform: rotate(90deg) translate(0, -50%);
+			     -o-transform: rotate(90deg) translate(0, -50%);
+			        transform: rotate(90deg) translate(0, -50%);
 		}
 
 		.button {
-			width: 5em;
-			height: 5em;
+			width: 5.5em;
+			height: 5.5em;
 			border-radius: 50%;
+			right: 0;
+			top: 50%;
+			-webkit-transform: translate(0, -50%);
+			   -moz-transform: translate(0, -50%);
+			    -ms-transform: translate(0, -50%);
+			     -o-transform: translate(0, -50%);
+			        transform: translate(0, -50%);
 			background-color: var(--red);
 		}
 
+		.button::before {
+			content: '';
+			width: 70%;
+			height: 70%;
+			top: 15%;
+			left: 15%;
+			border-radius: 50%;
+			background-color: var(--metal);
+		}
+
+		.button::after {
+			content: '';
+			width: 1em;
+			height: 1em;
+			border-radius: 50%;
+			top: 37%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			   -moz-transform: translate(-50%, -50%);
+			    -ms-transform: translate(-50%, -50%);
+			     -o-transform: translate(-50%, -50%);
+			        transform: translate(-50%, -50%);
+			background-color: var(--bg);
+			box-shadow: 0 1.5em 0 0 var(--bg);
+		}
+
 		.button-left {
+			right: 30%;
+		}
+
+		.button-right {
 			right: 10%;
 		}
 
@@ -133,10 +254,9 @@
 					<div class="arrow arrow-left"></div>
 					<div class="arrow arrow-right"></div>
 				</div>
-				<div class="buttons">
-					<div class="button button-left"></div>
-					<div class="button button-right"></div>
-				</div>
+
+				<div class="button button-left"></div>
+				<div class="button button-right"></div>
 			</div>
 
 			<div class="makey-bot">
