@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bear Face</title>
+
+	<style>
+		:root {
+			--bg: beige;
+	    	--pink: pink;
+	    	--white: white;
+	    	--black: black;
+		}
+
+		body {
+			background-color: var(--bg);
+		}
+
+		.face {
+			height: 450px;
+			width: 500px;
+			display: inline-block;
+			background-color: var(--pink);
+			border-radius: 300px;
+			position: relative;
+		}
+
+		.face__eyes {
+
+		}
+
+		.face__ears {
+			
+		}
+
+		.face__muzzle {
+			position: absolute;
+			left: 50%;
+			top: 38%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+		}
+
+		.muzzle {
+			height: 150px;
+			width: 180px;
+			display: inline-block;
+			background-color: var(--white);
+			border-radius: 60%;
+		}
+
+		.muzzle__line {
+			
+		}
+
+		.muzzle__nose {
+			position: absolute;
+			left: 50%;
+			top: 20%;
+			-webkit-transform: translateX(-50%);
+			   -moz-transform: translateX(-50%);
+			    -ms-transform: translateX(-50%);
+			     -o-transform: translateX(-50%);
+			        transform: translateX(-50%);
+			height: 50px;
+			width: 75px;
+			background-color: var(--black);
+			border-radius: 50%;
+		}
+
+		.ears {
+			
+		}
+
+		.ears__left {
+			
+		}
+
+		.ears__right {
+			
+		}
+
+		.eyes {
+			
+		}
+
+		.eyes__left {
+			left: 15%;
+		}
+
+		.eyes__right {
+			right: 15%;
+		}
+
+		.ear {
+			
+		}
+
+		.eye {
+			position: absolute;
+			top: 40%;
+			height: 60px;
+			width: 60px;
+			-webkit-border-radius: 50%;
+			        border-radius: 50%;
+			background-color: var(--black);
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="bear">
+		<div class="bear__face face">
+			<div class="face__ears ears">
+				<div class="ear ears__left">
+					<div class="ear__inner"></div>
+				</div>
+				<div class="ear ears__right">
+					<div class="ear__inner"></div>					
+				</div>
+			</div>
+
+			<div class="face__eyes eyes">
+				<div class="eye eyes__left"></div>
+				<div class="eye eyes__right"></div>
+			</div>
+			<div class="face__muzzle muzzle">
+				<div class="muzzle__nose"></div>
+				<div class="muzzle__line"></div>
+				<div class="muzzle__mouth"></div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
